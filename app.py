@@ -42,12 +42,12 @@ def makeWebhookResult(req):
     URL="http://www.google.co.in"
     r = requests.get(URL)
 
-    soup = BeautifulSoup(r.content)
+    speech = BeautifulSoup(r.content)
 
     
     
         
-    speech=soup    
+    
     print("Response:")
     print(speech)
 
