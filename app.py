@@ -6,7 +6,6 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
-
 from flask import Flask
 from flask import request
 from flask import make_response
@@ -38,10 +37,21 @@ def makeWebhookResult(req):
     zone = parameters.get("shipping-zone")
 
     cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
-    URL="http://www.google.com"
-    #speech=requests.get(URL)
-    speech=URL
+    speech=" "
     #speech = "The cost of shipping to " + zone + " is " + str(cost[zone]) + " euros."
+    URL="http://www.google.com"
+    r = requests.get(URL)
+
+    soup = BeautifulSoup(r.content)
+
+    links = soup.find_all("a",{"class","title"})
+    
+    for items in links:
+        speech=speech+items.text
+        
+    
+
+    
     print("Response:")
     print(speech)
 
