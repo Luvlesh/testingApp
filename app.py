@@ -36,18 +36,22 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("shipping-zone")
 
-    cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
+    #cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
     speech="Search results:"
     #speech = "The cost of shipping to " + zone + " is " + str(cost[zone]) + " euros."
-    URL="http://www.google.co.in"
+    URL="http://library.thapar.edu/cgi-bin/koha/opac-search.pl?idx=&q=data+structure"
     r = requests.get(URL)
 
     soup= BeautifulSoup(r.content)
 
     a=str(soup)
     
-    speech=a[1:10]
+    b=a[4000:34000]
         
+    c=BeautifulSoup(b)
+    links=c.find_all("a",{"class","title"})
+    for item in links:
+        speech=speech+item.text
     
     print("Response:")
     print(speech)
