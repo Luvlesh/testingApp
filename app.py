@@ -39,17 +39,17 @@ def makeWebhookResult(req):
     cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
     speech="Search results:"
     #speech = "The cost of shipping to " + zone + " is " + str(cost[zone]) + " euros."
-    URL="http://library.thapar.edu/cgi-bin/koha/opac-search.pl?idx=&q=data+structure"
-    r = requests.get(URL)
+    #URL="http://library.thapar.edu/cgi-bin/koha/opac-search.pl?idx=&q=data+structure"
+    #r = requests.get(URL)
 
-    soup = BeautifulSoup(r.content)
+    #soup = BeautifulSoup(r.content)
 
-    links = soup.find_all("a",{"class","title"})
+    #links = soup.find_all("a",{"class","title"})
     
-    for items in links:
-        speech=speech+items.text
+    #for items in links:
+     #   speech=speech+items.text
         
-    
+    speech="Hello Mangal"
 
     
     print("Response:")
