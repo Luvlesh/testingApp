@@ -46,7 +46,7 @@ def makeWebhookResult(req):
 
     a=str(soup)
     
-    b=a[4000:34000]
+    b=a[30000:34000]
         
     c=BeautifulSoup(b)
     links=c.find_all("a",{"class","title"})
