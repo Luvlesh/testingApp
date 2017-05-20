@@ -36,7 +36,7 @@ def makeWebhookResult(req):
     find_book = parameters.get("shipping-zone")
     find_book = "data structures"
     speech=" "
-    books=["data and structures","data structures"]
+    books=["data structures and alogos","advanced data structures"]
 
     matches = [x for x in books if re.search( find_book, x, re.M|re.I)]
 
