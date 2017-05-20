@@ -3,8 +3,7 @@
 import urllib
 import json
 import os
-import requests
-from bs4 import BeautifulSoup
+import re
 
 from flask import Flask
 from flask import request
@@ -35,23 +34,18 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     zone = parameters.get("shipping-zone")
-
-    #cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
-    speech="Search results:"
-    #speech = "The cost of shipping to " + zone + " is " + str(cost[zone]) + " euros."
-    URL="http://library.thapar.edu/cgi-bin/koha/opac-search.pl?idx=&q=data+structure"
-    r = requests.get(URL)
-
-    soup= BeautifulSoup(r.content)
-
-    a=str(soup)
     
-    b=a[30000:34000]
-        
-    c=BeautifulSoup(b)
-    links=c.find_all("a",{"class","title"})
-    for item in links:
-        speech=speech+item.text
+    speech=" "
+    find_book="data"
+    books=["data and structures ","data algorithms","secure Coding","image processing","embedded systems"]
+
+    matches = [x for x in books if re.search( find_book, x, re.M|re.I)]
+
+    for i in matches:
+        speech=speech+i+","
+
+
+    
     
     print("Response:")
     print(speech)
