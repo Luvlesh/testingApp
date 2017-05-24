@@ -45,7 +45,7 @@ def makeWebhookResult(req):
             speech="Not available"
         
         for i in matches:
-            speech= speech + i + " , " 
+            speech= speech + i + " \n " 
             
         print("Response:")
         print(speech)
@@ -61,7 +61,7 @@ def makeWebhookResult(req):
         new_books=["Information science in theory and practice - Vickery Brian","Total quality management "," Programmers technical ref. MS-DOS"," Information and its communication- Prashar & R.G."]
         speech=""
         for i in new_books:
-            speech= speech + i + " , "     
+            speech= speech + i + "\n"     
                 
         print("Response:")
         print(speech)            
