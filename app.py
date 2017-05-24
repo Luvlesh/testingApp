@@ -72,6 +72,25 @@ def makeWebhookResult(req):
             # "contextOut": [],
             "source": "python_stubot"
         }
+    if req.get("result").get("action") == "find.lecture":
+        result = req.get("result")
+        parameters = result.get("parameters")
+        day = parameters.get("day")
+        time = parameters.get("time")
+        
+        timetable={"08:00:00":"Image Processing","09:00:00":"Advanced Data Structures","10:00:00":"Embedded Systems","11:00:00":"Natural Language Processing","12:00:00":"Secure coding","13:00:00":"Lunch Break","14:00:00":"Lunch Break","15:00:00":"ADS Lab","16:00:00":"ADS Lab"}
+        speech=timetable[time]
+        
+        print("Response:")
+        print(speech)         
+        return {
+            "speech": speech,
+            "displayText": speech,
+            #"data": {},
+            # "contextOut": [],
+            "source": "python_stubot"
+        }        
+        
     else:
         return{}
 
