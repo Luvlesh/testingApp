@@ -118,7 +118,7 @@ if req.get("result").get("action") == "available.book.library":
             #"data": {},
             # "contextOut": [],
             "source": "python_stubot"
-}        
+        }        
     else:
         return{}
 
