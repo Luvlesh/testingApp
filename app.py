@@ -91,7 +91,7 @@ def makeWebhookResult(req):
             "source": "python_stubot"
         }        
         
-if req.get("result").get("action") == "available.book.library":
+    if req.get("result").get("action") == "available.book.library":
         result = req.get("result")
         parameters = result.get("parameters")
         book = parameters.get("title")
