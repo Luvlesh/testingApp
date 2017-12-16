@@ -49,7 +49,7 @@ def makeWebhookResult(req):
             
         print("Response:")
         print(speech)
-
+'''
         return {
             "speech": speech,
             "displayText": speech,
@@ -57,6 +57,25 @@ def makeWebhookResult(req):
             # "contextOut": [],
             "source": "python_stubot"
         }
+'''
+        return {
+            "speech": speech,
+            "messages": [
+            {
+            "type": 0,
+            "speech": "my first response"
+            },
+            {
+            "type": 0,
+            "speech": "my second response"
+            }
+            ],
+            "displayText": speech,
+            #"data": {},
+            # "contextOut": [],
+            "source": "python_stubot"
+        }
+            
     if req.get("result").get("action") == "new.book.library":
         new_books=["Information science in theory and practice ","Total quality management "," Programmers technical ref. MS-DOS"," Information and its communication- Prashar & R.G."]
         speech=""
