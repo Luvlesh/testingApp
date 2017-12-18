@@ -143,21 +143,21 @@ def makeWebhookResult(req):
             "speech": speech,
             "displayText": speech,
             "data" : {
-            "facebook" : {
-            "attachment" : {
-            "type" : "template",
-            "payload" : {
-            "template_type" : "generic",
-            "elements" : [ 
-            {
-            "title" : "Book",
-            "image_url" : "https://about.canva.com/wp-content/uploads/sites/3/2015/01/children_bookcover.png"
-            }
-            ]
-            }
-            }
-            }
-            }
+                "facebook" : {
+                    "attachment" : {
+                        "type" : "template",
+                        "payload" : {
+                            "template_type" : "generic",
+                            "elements" : [ 
+                                {
+                                    "title" : "book",
+                                    "image_url" : "https://about.canva.com/wp-content/uploads/sites/3/2015/01/children_bookcover.png"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
             # "contextOut": [],
             "source": "python_stubot"
         }
