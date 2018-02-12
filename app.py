@@ -35,7 +35,7 @@ def makeWebhookResult(req):
 		parameters = result.get("parameters")
 		book = parameters.get("title")
 		'''
-		return: {"speech": "speech","displayText": "speech","source": "python_stubot"}
+		return {"speech": "speech","displayText": "speech","source": "python_stubot"}
 		#"data": {},
 		# "contextOut": [],
 		
