@@ -36,12 +36,12 @@ def makeWebhookResult(req):
 		parameters = result.get("parameters")
 		book = parameters.get("title")
 		'''
-		return "messages": [{"speech": "Hey There","type":0}]
+		return {"messages": [{"speech": "Hey There","type":0}]}
 		#"data": {},
 		# "contextOut": [],
 		
 	else:
-		return "messages": [{"speech": "Error","type":0}]
+		return {"messages": [{"speech": "Error","type":0}]}
 
 
 if __name__ == '__main__':
