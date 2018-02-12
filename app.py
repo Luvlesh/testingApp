@@ -31,18 +31,17 @@ def webhook():
 def makeWebhookResult(req):
 
 	print(req.get("result").get("action"))
-	if req.get("result").get("action") == "something":
+	if req.get("result").get("action") == "input.welcome":
 		'''result = req.get("result")
 		parameters = result.get("parameters")
 		book = parameters.get("title")
 		'''
-		return {"speech": "speech","displayText": "speech","source": "python_stubot"}
+		return "messages": [{"speech": "Hey There","type":0}]
 		#"data": {},
 		# "contextOut": [],
 		
 	else:
-		return {"speech": "speech","displayText": "speech","source": "python_stubot"}
-
+		return "messages": [{"speech": "Error","type":0}]
 
 
 if __name__ == '__main__':
