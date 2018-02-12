@@ -28,21 +28,18 @@ def webhook():
 	return r
 
 def makeWebhookResult(req):
+
 	print(req.get("result").get("action"))
 	if req.get("result").get("action") == "something":
 		'''result = req.get("result")
 		parameters = result.get("parameters")
 		book = parameters.get("title")
 		'''
-		return {
-		"speech": "speech",
-		"displayText": "speech",
+		return: {"speech": "speech","displayText": "speech","source": "python_stubot"}
 		#"data": {},
 		# "contextOut": [],
-		"source": "python_stubot"}
+		
 
- 	else:
-		return{}
 
 
 if __name__ == '__main__':
